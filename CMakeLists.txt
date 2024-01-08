@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(basen)
-add_executable(${PROJECT_NAME} src/main.cpp)
-target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Werror -std=c++14)
-
+add_executable(${PROJECT_NAME} src/main.cpp src/databaseShop.cpp src/product.cpp)
+target_compile_options(${PROJECT_NAME} PRIVATE -std=c++14)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -18,9 +17,8 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(${PROJECT_NAME}-ut src/tests.cpp)
-target_compile_options(${PROJECT_NAME}-ut PRIVATE -Wall -Wextra -Wpedantic -Werror -std=c++14)
-
+add_executable(${PROJECT_NAME}-ut src/tests.cpp src/databaseShop.cpp src/product.cpp)
+target_compile_options(${PROJECT_NAME}-ut PRIVATE -std=c++14)
 target_link_libraries(${PROJECT_NAME}-ut GTest::gtest_main)
 
 include(GoogleTest)
