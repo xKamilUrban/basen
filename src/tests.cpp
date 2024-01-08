@@ -18,10 +18,31 @@ TEST(CheckStructure, ProductRecord){
 		3430032, // id produktu
 		"odziez", //typ produktu
 		"M", //rozmiar
-		Gender::Famale //dla jakiej plci jest przeznaczony
+		"Damskie" //dla jakiej plci jest przeznaczony
 	};
 	DatabaseShop db;
-	db.add(stroj);
 	EXPECT_TRUE(db.add(stroj));
 	EXPECT_FALSE(db.add(stroj));
 };
+
+//TEST(DisplayDB, NonEmpty){
+//	Product stroj {
+//		"stroj damski w kropki",  //nazwa produktu
+//		199, //cena
+//		120, //ilosc produktow
+//		3430032, // id produktu
+//		"odziez", //typ produktu
+//		"M", //rozmiar
+//		Gender::Famale //dla jakiej plci jest przeznaczony
+//	};
+//	DatabaseShop db;
+//	EXPECT_TRUE(db.add(stroj));
+//
+//	auto content = db.print(stroj);
+//	auto expected = "stroj damski w kropki "
+//					"cena: 199zl "
+//					"ilosc dostepnych produtkow: 120 "
+//					"rozmiar: M ";
+//	EXPECT_EQ(content, expected);
+//	db.DisplayDB();
+//};
