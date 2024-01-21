@@ -4,10 +4,10 @@
 
 class DatabaseShop{
 public:
-	bool add(const Product& pr);
-	void DisplayDB() const;
-	std::string print(const Product& s) const;
-	int searchname(std::string);
+	void DisplayDB(std::string start,std::string end);
+	std::string print(const ProductEdit& s) const;
+	void add(const ProductEdit& pr);
+	void Input(int id);
 private:
 	bool exist=false;
 	std::vector<Product> products_;
